@@ -28,10 +28,7 @@ jobs:
         VERSION=$(cat VERSION)
         echo VERSION=$VERSION
         
-        docker build . --tag ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:latest --tag ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:$VERSION
-        docker create -v $(pwd):/config -p 50222:50222/udp ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:$VERSION
-        docker create -v $(pwd):/config -p 50222:50222/udp ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:latest
-        docker push ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:$VERSION
+        docker build . --tag ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:latest
         docker push ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:latest
 
   publish-tzb-silabs-flasher-image:
@@ -52,8 +49,5 @@ jobs:
         VERSION=$(cat VERSION)
         echo VERSION=$VERSION
         
-        docker build . --tag ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:latest --tag ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:$VERSION
-        docker create -v $(pwd):/config -p 50222:50222/udp ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:$VERSION
-        docker create -v $(pwd):/config -p 50222:50222/udp ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:latest
-        docker push ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:$VERSION
+        docker build . --tag ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:latest
         docker push ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:latest
