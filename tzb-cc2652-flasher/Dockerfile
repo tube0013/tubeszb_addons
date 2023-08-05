@@ -2,8 +2,6 @@ ARG BUILD_FROM
 ARG BUILD_ARCH
 
 FROM $BUILD_FROM
-LABEL org.opencontainers.image.source="https://github.com/tube0013/tubeszb_addons"
-
 
 
 RUN \
