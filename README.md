@@ -6,11 +6,11 @@ Addon-ons for Home Assistant that allow you to easily flash new firmware on your
 
 ## Add-ons provided by this repository
 
-- **[TubesZB TI CC2652 FW Flasher](/tzb-cc2652-flasher/README.md)**
+- **[TubesZB TI CC2652 FW Flasher](https://github.com/tube0013/tubeszb_addons/tree/main/tzb-cc2652-flasher/README.md)**
 
     Flash FW to TubesZB TI CC2652 based Coordinators
 
-- **[TubesZB Silicon Labs FW Flasher](/tzb-silabs-flasher/README.md)**
+- **[TubesZB Silicon Labs FW Flasher](/https://github.com/tube0013/tubeszb_addons/blob/main/tzb-silabs-flasher/README.md)**
 
     Flash FW to TubesZB SiliconLabs EFR32 based Coordinators
 
