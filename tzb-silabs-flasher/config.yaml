@@ -1,0 +1,33 @@
+---
+version: 0.1.0
+slug: tzb-silabs-flasher
+name: TubesZB Silicon Labs FW Flasher
+description: TubesZB Silicon Labs firmware flasher add-on
+url: >
+  https://tube0013/tubeszb_addons/tree/master/tzb-silabs-flasher
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+gpio: false
+hassio_api: true
+#image: tube0013/{arch}-addon-tzb-silabs-flasher
+init: false
+options:
+  device: null
+  network_device: null
+  bootloader_baudrate: "115200"
+  flow_control: false
+  verbose: false
+schema:
+  device: device(subsystem=tty)?
+  network_device: str?
+  bootloader_baudrate: list(57600|115200|230400|460800|921600)
+  flow_control: bool?
+  firmware_url: str?
+  verbose: bool?
+stage: experimental
+startup: once
+boot: manual

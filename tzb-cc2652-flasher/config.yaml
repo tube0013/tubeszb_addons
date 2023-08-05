@@ -1,0 +1,30 @@
+---
+version: 0.1.0
+slug: tzb-cc2652-flasher
+name: TubesZB TI CC2652 FW Flasher
+description: TubesZB TI CC2652 firmware flasher add-on
+url: >
+  https://tube0013/tubeszb_addons/tree/master/tzb-cc2652-flasher/
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+gpio: false
+hassio_api: true
+#image: tube0013/{arch}-addon-tzb-cc2652-flasher
+init: false
+options:
+  device: null
+  network_device: null
+  flow_control: false
+  verbose: false
+schema:
+  device: device(subsystem=tty)?
+  network_device: str?
+  flow_control: bool?
+  firmware_url: str?
+stage: experimental
+startup: once
+boot: manual

@@ -1,0 +1,15 @@
+---
+configuration:
+  device:
+    name: Device
+    description: The serial port where the CC2652 radio is connected to.
+  network_device:
+    name: Network Device
+    description: The ip address and port of your network connected CC2652 radio. IP_ADDRESS:PORT
+  flow_control:
+    name: Hardware flow control
+    description: Enable hardware flow control for serial port.
+  firmware_url:
+    name: Firmware URL
+    description: >-
+      URL for firmware zip image you wish to flash
