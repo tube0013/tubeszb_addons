@@ -8,6 +8,7 @@ set -e
 declare autoflash_firmware
 declare device
 declare network_device
+declare network_device_url
 declare firmware
 declare exit_status
 
@@ -27,13 +28,17 @@ function exit_no_firmware {
 
 device=$(bashio::config 'device')
 network_device=$(bashio::config 'network_device')
+network_device_url=$(echo "$network_device" | sed 's/.\{5\}$//')
 
 if bashio::config.has_value 'network_device'; then
     device="socket://${network_device}"
 fi
 
-bootloader_baudrate=$(bashio::config 'bootloader_baudrate')
-
+if bashio::config.true 'trigger_esphome_bsl'; then
+    bashio::log.info "Triggering Bootloader mode on ${network_device_url}"
+    curl --silent -X POST http://${network_device_url}/button/trigger_zigbee_module_bootloader/press
+    sleep 8s
+fi
 
 if bashio::config.has_value 'firmware_url'; then
     curl --silent -L -o "/root/firmware.zip" "$(bashio::config 'firmware_url')"
