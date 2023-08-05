@@ -8,6 +8,9 @@ Click on the button below:
 
 Or, in your Home Assistant, navigate to _Configuration_ > _Add-ons, Backups & Supervisor_ > _Add-on Store_ > _..._ > _Repositories_ and add `https://github.com/tube0013/tubeszb_addons` to the list.
 
+
+Video Walk Through: https://www.youtube.com/watch?v=W28hdRx0mV4
+
 1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons, Backup & Supervisor** -> **Add-on Store**.
 2. Find the "TubesZB TI CC2652 FW Flasher" add-on and click it.
 3. Click on the "INSTALL" button.
