@@ -13,3 +13,7 @@ configuration:
     name: Firmware URL
     description: >-
       URL for firmware zip image you wish to flash
+  trigger_esphome_bsl:
+    name: Enable Bootloader mode with ESPHome
+    description: >-
+      Enables the addon to trigger bootloader mode by talking directly to ESPHome
