@@ -26,7 +26,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
       with:
-        context: image/
+        context: .
         push: true
         tags: ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:latest
 
@@ -46,6 +46,6 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
       with:
-        context: image/
+        context: .
         push: true
         tags: ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:latest
