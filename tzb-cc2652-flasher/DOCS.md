@@ -21,7 +21,7 @@ serial port defined by IP addres and port or other USB based wireless adapters.
    select the correct `device` in the add-on configuration tab and press `Save`.
    (When targetting a network device you will will also need to select 1 of the 
    local serial ports for the addon's config to save - it will not be used though)
-2. Select to enable the ESPHome trigger of the bootloader for netwrok coordinators.
+2. Select to enable the ESPHome trigger of the bootloader for network coordinators.
    (note may not work with all TubesZB  ESPHome fw versions, If not open the coordinator's
    web frontend in a browser and trigger the BSL/Bootloader mode there)
 3. Enter in the url for the Z-Stack Firmware - be sure to use the raw github link
