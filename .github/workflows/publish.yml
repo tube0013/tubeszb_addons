@@ -24,10 +24,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Build the tzb-cc2652-flasher Docker image
-      run: |
-        VERSION=$(cat VERSION)
-        echo VERSION=$VERSION
-        
+      run: |       
         docker build . --tag ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:latest
         docker push ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:latest
 
