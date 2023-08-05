@@ -45,9 +45,6 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Build the tzb-silabs-flasher Docker image
-      run: |
-        VERSION=$(cat VERSION)
-        echo VERSION=$VERSION
-        
+      run: |       
         docker build . --tag ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:latest
         docker push ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:latest
