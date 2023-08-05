@@ -24,8 +24,10 @@ serial port defined by IP addres and port or other USB based wireless adapters.
 2. Select to enable the ESPHome trigger of the bootloader for netwrok coordinators.
    (note may not work with all TubesZB  ESPHome fw versions, If not open the coordinator's
    web frontend in a browser and trigger the BSL/Bootloader mode there)
-3. Start the add-on.
-4. Monitor the flash by goind to the addon log page, and refreshing periodically.
+3. Enter in the url for the Z-Stack Firmware - be sure to use the raw github link
+   example: https://github.com/Koenkk/Z-Stack-firmware/raw/7398d834eb3a790876c280293c4181da96cc7114/coordinator/Z-Stack_3.x.0/bin/CC1352P2_CC2652P_launchpad_coordinator_20221226.zip
+4. Start the add-on.
+5. Monitor the flash by goind to the addon log page, and refreshing periodically.
 
 ## Configuration
 
