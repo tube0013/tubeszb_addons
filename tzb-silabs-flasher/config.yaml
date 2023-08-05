@@ -16,17 +16,18 @@ hassio_api: true
 #image: tube0013/{arch}-addon-tzb-silabs-flasher
 init: false
 options:
-  device: null
   network_device: null
+  device: null
+  firmware_url: str?
   bootloader_baudrate: "115200"
   flow_control: false
   verbose: false
 schema:
-  device: device(subsystem=tty)?
   network_device: str?
+  device: device(subsystem=tty)?
+  firmware_url: str?
   bootloader_baudrate: list(57600|115200|230400|460800|921600)
   flow_control: bool?
-  firmware_url: str?
   verbose: bool?
 stage: experimental
 startup: once

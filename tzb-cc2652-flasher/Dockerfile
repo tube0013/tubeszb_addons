@@ -9,10 +9,8 @@ RUN \
     && apk add --no-cache \
         py3-pip \
         python3 \
-    && pip3 install \
-        git+https://git.beagleboard.org/beagleconnect/cc1352-flasher.git
-    && pip3 install \
-        intelhex
+        git \
+    && pip3 install git+https://git.beagleboard.org/beagleconnect/cc1352-flasher.git intelhex
 
 COPY rootfs /
 
