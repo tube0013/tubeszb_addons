@@ -1,0 +1,59 @@
+name: publish
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/README.md'
+      - '**/CHANGELOG.md'
+
+
+jobs:
+  publish-tzb-cc2652-flasher-image:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build the tzb-cc2652-flasher Docker image
+      run: |
+        VERSION=$(cat VERSION)
+        echo VERSION=$VERSION
+        
+        docker build . --tag ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:latest --tag ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:$VERSION
+        docker create -v $(pwd):/config -p 50222:50222/udp ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:$VERSION
+        docker create -v $(pwd):/config -p 50222:50222/udp ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:latest
+        docker push ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:$VERSION
+        docker push ghcr.io/tube0013/tubeszb_addons/tzb-cc2652-flasher:latest
+
+  publish-tzb-silabs-flasher-image:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build the tzb-silabs-flasher Docker image
+      run: |
+        VERSION=$(cat VERSION)
+        echo VERSION=$VERSION
+        
+        docker build . --tag ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:latest --tag ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:$VERSION
+        docker create -v $(pwd):/config -p 50222:50222/udp ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:$VERSION
+        docker create -v $(pwd):/config -p 50222:50222/udp ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:latest
+        docker push ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:$VERSION
+        docker push ghcr.io/tube0013/tubeszb_addons/tzb-silabs-flasher:latest
