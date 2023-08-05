@@ -13,7 +13,7 @@ arch:
   - i386
 gpio: false
 hassio_api: true
-#image: tube0013/{arch}-addon-tzb-cc2652-flasher
+image: tube0013/{arch}-addon-tzb-cc2652-flasher
 init: false
 options:
   device: null
