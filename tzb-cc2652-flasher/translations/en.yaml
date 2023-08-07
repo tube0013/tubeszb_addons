@@ -16,4 +16,7 @@ configuration:
   trigger_esphome_bsl:
     name: Enable Bootloader mode with ESPHome
     description: >-
-      Enables the addon to trigger bootloader mode by talking directly to ESPHome
+      Enables the addon to trigger bootloader mode by talking directly to ESPHome (requires most recent esphome FW from https://github.com/tube0013/tube_gateways)
+  device_type:
+    name: Flash USB Device
+    description: Flash USB device instead of Network Device (Requires you to trigger bootloader mode by holding BSL button while plugging in to USB)

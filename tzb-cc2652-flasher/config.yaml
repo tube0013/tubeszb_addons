@@ -19,11 +19,13 @@ options:
   network_device: null
   device: null
   trigger_esphome_bsl: false
+  device_type: false
   flow_control: false
 schema:
   device: device(subsystem=tty)?
   network_device: str?
   trigger_esphome_bsl: bool?
+  device_type: bool?
   flow_control: bool?
   firmware_url: str?
 stage: experimental

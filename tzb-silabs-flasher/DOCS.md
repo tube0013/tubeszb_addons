@@ -17,10 +17,23 @@ Or, in your Home Assistant, navigate to _Configuration_ > _Add-ons, Backups & Su
 The add-on needs a Silicon Labs based wireless module accessible through a network
 serial port defined by IP addres and port or other USB based wireless adapters.
 
-1. For a Network attached coordinator enter the IP_ADDRESS:port or 
-   select the correct `device` in the add-on configuration tab and press `Save`.
-2. Start the add-on.
-3. Monitor the flash by goind to the addon log page, and refreshing periodically.
+*Disable ZHA or Z2M*
+
+# For Network connected coordinator:
+1. In the add-on configuration enter the IP_ADDRESS:port in the Network Device entry form
+2. Select any serial device to make the form happy
+3. Paste the link the the firmware .GBL file to be used for the update and press `Save`.
+4. Start the add-on.
+5. Monitor the flash by going to the addon log page, and refreshing periodically.
+
+# For USB Attaced Coordinator
+1. In the add-on configuratione enter some text into the Network Device entry form to kmake the form happy
+2. Select the correct serial device from the list of devices detect, Toggle the switch to enable USB Flash
+3. Paste the link the the firmware .GBL file to be used for the update and press `Save`.
+4. Start the add-on.
+5. Monitor the flash by going to the addon log page, and refreshing periodically.
+
+
 
 ## Configuration
 

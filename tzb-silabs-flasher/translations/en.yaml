@@ -2,10 +2,10 @@
 configuration:
   device:
     name: Device
-    description: The serial port where the Silicon Labs radio is connected to.
+    description: The serial port where the Silicon Labs radio is connected to. (Selection Required even if flashing network device)
   network_device:
-    name: Network Device
-    description: The ip address and port of your network connected Silicon Labs radio. IP_ADDRESS:PORT
+    name: Network Device (Required)
+    description: The ip address and port of your network connected Silicon Labs radio. IP_ADDRESS:PORT (text entry required eve if flashing USB device)
   bootloader_baudrate:
     name: Bootloader Baudrate
     description: >-
@@ -22,3 +22,6 @@ configuration:
     name: Verbose mode
     description: >-
       Start universal-silabs-flasher in verbose mode.
+  device_type:
+    name: Flash USB Device
+    description: Flash USB device instead of Network Device

@@ -8,6 +8,7 @@ set -e
 declare autoflash_firmware
 declare device
 declare network_device
+declare device_type
 declare network_device_url
 declare firmware
 declare exit_status
@@ -26,11 +27,12 @@ function exit_no_firmware {
     exit 0
 }
 
-device=$(bashio::config 'device')
 network_device=$(bashio::config 'network_device')
 network_device_url=$(echo "$network_device" | sed 's/.\{5\}$//')
 
-if bashio::config.has_value 'network_device'; then
+if bashio::config.true 'device_type'; then
+    device=$(bashio::config 'device')
+else
     device="socket://${network_device}"
 fi
 
