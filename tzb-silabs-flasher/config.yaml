@@ -13,7 +13,7 @@ arch:
   - i386
 gpio: false
 hassio_api: true
-#image: tube0013/{arch}-addon-tzb-silabs-flasher
+image: tube0013/{arch}-addon-tzb-silabs-flasher
 init: false
 options:
   network_device: null
