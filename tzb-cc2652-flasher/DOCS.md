@@ -18,27 +18,27 @@ Video Walk Through: https://www.youtube.com/watch?v=W28hdRx0mV4
 ## How to use
 
 The add-on needs a TI CC2652 wireless module accessible through a network
-serial port defined by IP addres and port or other USB based wireless adapters.
+serial port (defined by IP address and port) or other USB-based wireless adapters.
 
 # For Network connected coordinator:
 1. In the add-on configuration enter the IP_ADDRESS:port in the Network Device entry form
 2. Select any serial device to make the form happy
 3. Select to enable the ESPHome trigger of the bootloader for network coordinators.
-   (note may not work with all TubesZB  ESPHome fw versions, If not open the coordinator's
+   (note may not work with all TubesZB  ESPHome firmware versions versions, If not open the coordinator's
    web frontend in a browser and trigger the BSL/Bootloader mode there)
-4. Enter in the url for the Z-Stack Firmware - be sure to use the raw github link
+4. Enter in the url for the Z-Stack Firmware - be sure to use the raw GitHub link
    example: https://github.com/Koenkk/Z-Stack-firmware/raw/7398d834eb3a790876c280293c4181da96cc7114/coordinator/Z-Stack_3.x.0/bin/CC1352P2_CC2652P_launchpad_coordinator_20221226.zip
 5. Start the add-on.
-6. Monitor the flash by goind to the addon log page, and refreshing periodically.
+6. Monitor the flash by going to the addon log page and refreshing periodically.
 
-# For USB Attaced Coordinator
-1. In the add-on configuratione enter some text into the Network Device entry form to kmake the form happy
+# For USB Attached Coordinator
+1. In the add-on configuration enter some text into the Network Device entry form to make the form happy
 2. Select the correct serial device from the list of devices detect, Toggle the switch to enable USB Flash
-   (Coordinator mus tbe in bootloader mode before addon is started, hold bsl button while plugging into USB)
-3. Enter in the url for the Z-Stack Firmware - be sure to use the raw github link
+   (Coordinator must be in bootloader mode before addon is started, hold BSL button while plugging into USB)
+3. Enter in the url for the Z-Stack Firmware - be sure to use the raw GitHub link
    example: https://github.com/Koenkk/Z-Stack-firmware/raw/7398d834eb3a790876c280293c4181da96cc7114/coordinator/Z-Stack_3.x.0/bin/CC1352P2_CC2652P_launchpad_coordinator_20221226.zip
 4. Start the add-on.
-5. Monitor the flash by goind to the addon log page, and refreshing periodically.
+5. Monitor the flash by going to the addon log page, and refreshing periodically.
 
 
 
