@@ -1,5 +1,5 @@
 ---
-version: 0.2.1
+version: 0.2.2
 slug: tzb-silabs-flasher
 name: TubesZB Silicon Labs FW Flasher
 description: TubesZB Silicon Labs firmware flasher add-on
@@ -13,7 +13,7 @@ arch:
   - i386
 gpio: false
 hassio_api: true
-image: tube0013/{arch}-addon-tzb-silabs-flasher
+image: "ghcr.io/tube0013/{arch}-addon-tzb-silabs-flasher"
 init: false
 options:
   network_device: null
