@@ -1,8 +1,8 @@
 ---
-version: 0.1.0
+version: 0.2.0
 slug: tzb-zigpy-cli-tools
 name: TubesZB Zigpy-CLI Tools
-description: TubesZB Zigpy-CLI Tools add-on
+description: TubesZB Zigpy-CLI Toolsadd-on
 url: >
   https://tube0013/tubeszb_addons/tree/master/tzb-zigpy-cli-tools/
 arch:
@@ -15,6 +15,11 @@ gpio: false
 hassio_api: true
 image: "ghcr.io/tube0013/{arch}-addon-tzb-zigpy-cli-tools"
 init: false
+map:
+  - share:rw
+  - config:rw
+  - all_addon_configs:rw
+
 options:
   network_device: null
   device: null
@@ -28,7 +33,8 @@ schema:
   network_device: str?
   radio_type: list(znp|ezsp|deconz|xbee|zigate|zboss)
   baudrate: list(57600|115200|230400|460800|921600)
-  action: list(info|energy-scan|reset|form)
+  action: list(info|energy-scan|reset|form|backup|restore)
+  backup_filename: str?
 stage: stable
 startup: once
 boot: manual

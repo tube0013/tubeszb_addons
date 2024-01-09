@@ -11,6 +11,7 @@ declare device_type
 declare action
 declare baudrate
 declare radio_type
+declare backup_filename
 declare exit_status
 
 function cleanup() {
@@ -24,6 +25,14 @@ trap cleanup EXIT
 
 network_device=$(bashio::config 'network_device')
 
+# Make folder for backups
+if  [ -d /config/tzb-zigpy-cli-tools ]; then
+    bashio::log.info "Directoty Exists"
+else
+    mkdir /config/tzb-zigpy-cli-tools
+    bashio::log.info "Created /config/tzb-zigpy-cli-tools Directory"
+fi
+
 if bashio::config.true 'device_type'; then
     device="socket://${network_device}"
 else
@@ -33,10 +42,27 @@ fi
 baudrate=$(bashio::config 'baudrate')
 radio_type=$(bashio::config 'radio_type')
 action=$(bashio::config 'action')
+backup_filename=$(bashio::config 'backup_filename')
 
+if (bashio::config.equals 'action' 'restore'); then
+    if [ ! -f /config/tzb-zigpy-cli-tools/${backup_filename} ]; then
+        bashio::log.warning "Backup File Not Found"
+        exit 0
+    fi
+fi
 
-bashio::log.info "Running zigpy - ${action} on ${device}"
-zigpy radio --baudrate ${baudrate} ${radio_type} ${device} ${action}
-exit 0
+if ((bashio::config.equals 'action' 'backup') || (bashio::config.equals 'action' 'restore')) && (bashio::config.has_value 'backup_filename'); then
+    bashio::log.info "Running zigpy - ${action} on ${device} to /config/tzb-zigpy-cli-tools/${backup_filename}"
+    zigpy radio --baudrate ${baudrate} ${radio_type} ${device} ${action} /config/tzb-zigpy-cli-tools/${backup_filename}
+elif ((bashio::config.equals 'action' 'backup') || (bashio::config.equals 'action' 'restore')) && (bashio::config.is_empty 'backup_filename'); then
+    bashio::log.warning "Not Backup File Specified"
+    exit 0
+elif ((bashio::config.equals 'action' 'info') || (bashio::config.equals 'action' 'energy-scan') || (bashio::config.equals 'action' 'form') || (bashio::config.equals 'action' 'reset')); then
+    bashio::log.info "Running zigpy - ${action} on ${device}"
+    zigpy radio --baudrate ${baudrate} ${radio_type} ${device} ${action} 
+else
+    bashio::log.warning "No Action Specified"
+    exit 0
+fi
 
-
+bashio::log.info "Action Complete"

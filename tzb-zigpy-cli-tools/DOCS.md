@@ -40,6 +40,12 @@ Currently 4 commands are supported from zipy-cli
 * **Energy Scan** -  Perform an energy scan
 * **Form** - Form a network on a new coordinator
 * **Reset** - Resets the radio removing its network configuration
+* **backup** - Backup Coordinator Network information to filename entereted
+* **restore** - Restore Backup file specified to Coordinator
+
+For Backup and Restore options, a folder will be created your Home Assistant config folder called tzb-zigpy-cli-tools
+Under the Addon Advanced Options specify the name of the backup to create or restore - for example `backup.json`
+
 
 # Start the addon
 Start the Addon from the Info Tab.
@@ -57,5 +63,5 @@ Add-on configuration:
 | radio_type         | Type of radio / coordinator
 | baudrate           | Serial port baudrate (depends on firmware)   |
 | action             | zigpy-cli command to run |
-
+| backup_filename    | Network backup filename |
 
