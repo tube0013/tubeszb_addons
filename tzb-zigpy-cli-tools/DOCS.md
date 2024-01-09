@@ -41,6 +41,10 @@ Currently 4 commands are supported from zipy-cli
 * **Form** - Form a network on a new coordinator
 * **Reset** - Resets the radio removing its network configuration
 
+# Start the addon
+Start the Addon from the Info Tab.
+Switch over the the Log Tab to see the tools output, refresh the log occasionally to get the lasted updates of the console/command output.
+When done, be sure the addon is stopped before restarting ZHA or Zigbee2MQTT
 
 ## Configuration
 
