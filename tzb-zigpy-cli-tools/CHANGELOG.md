@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.2
+- Fix permissions
+
 ## 0.2.1
 - update en translation for new config option
 
