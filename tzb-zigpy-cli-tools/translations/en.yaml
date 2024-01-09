@@ -20,3 +20,6 @@ configuration:
   device_type:
     name: Use Network Device
     description: By Default the Addon will use the selected serial port, selct this option and fill in the Network device address
+  backup_file:
+    name: Backup Filename
+    description: Backup File name for backup option or retstore option
