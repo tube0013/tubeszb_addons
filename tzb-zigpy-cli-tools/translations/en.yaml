@@ -1,0 +1,22 @@
+---
+configuration:
+  device:
+    name: Device
+    description: The serial port where the coordinator is connected. (select one even if using a network device)
+  network_device:
+    name: Network Device
+    description: The ip address and port of your network connected coordinator. IP_ADDRESS:PORT
+  action:
+    name: Zigpy-CLI Command
+    description: >-
+      Command to run - Info, Energy Scan, Form Network, Reset Coordinator
+  baudrate:
+    name: Baudrate
+    description: >-
+      The serial port baudrate used to communicate with the coordinator
+  radio_type:
+    name: Radio Type
+    description: Type of radio - znp (TI CC2652), ezsp (Silicon Labs EFR32), deconz (Conbee), Xbee, zboss (Nordic NRF)
+  device_type:
+    name: Use Network Device
+    description: By Default the Addon will use the selected serial port, selct this option and fill in the Network device address

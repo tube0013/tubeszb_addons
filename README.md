@@ -14,6 +14,10 @@ Addon-ons for Home Assistant that allow you to easily flash new firmware on your
 
     Flash FW to TubesZB SiliconLabs EFR32 based Coordinators
 
+- **TubesZB Zigpy-CLI Tools](https://github.com/tube0013/tubeszb_addons/blob/main/tzb-zigpy-cli-tools/DOCS.md)**
+
+    Use the [Zigpy-CLI](https://github.com/zigpy/zigpy-cli) in an add-on!
+
 ## Installation
 
 Click on the button below:

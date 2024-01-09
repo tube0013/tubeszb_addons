@@ -1,0 +1,42 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Start zigpy-cli-up
+# ==============================================================================
+
+set -e
+
+declare device
+declare network_device
+declare device_type
+declare action
+declare baudrate
+declare radio_type
+declare exit_status
+
+function cleanup() {
+    exit_status=$?
+    bashio::log.info "zigpy-cli-up script exited with code ${exit_status}"
+    echo "${exit_status}" > /run/s6-linux-init-container-results/exitcode
+
+    /run/s6/basedir/bin/halt
+}
+trap cleanup EXIT
+
+network_device=$(bashio::config 'network_device')
+
+if bashio::config.true 'device_type'; then
+    device="socket://${network_device}"
+else
+    device=$(bashio::config 'device')
+fi
+
+baudrate=$(bashio::config 'baudrate')
+radio_type=$(bashio::config 'radio_type')
+action=$(bashio::config 'action')
+
+
+bashio::log.info "Running zigpy - ${action} on ${device}"
+zigpy radio --baudrate ${baudrate} ${radio_type} ${device} ${action}
+exit 0
+
+
