@@ -24,9 +24,11 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4.1.7
 
-      - name: Get changed files
-        id: changed_files
-        uses: masesgroup/retrieve-changed-files@v3.0.0
+      - name: 📂 Detect changed files
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: .github/paths-filter.yml
 
       - name: Get add-ons
         id: addons
