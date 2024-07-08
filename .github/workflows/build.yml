@@ -2,7 +2,7 @@ name: Builder
 
 env:
   BUILD_ARGS: "--test"
-  MONITORED_FILES: "build.yml build.yaml config.yml Dockerfile rootfs"
+  MONITORED_FILES: "build.yml build.yaml config.yml Dockerfile rootfs CHANGELOG.md"
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
+#  workflow_dispatch:
 
 jobs:
   init:
