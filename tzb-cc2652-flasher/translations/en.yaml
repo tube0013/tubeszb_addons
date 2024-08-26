@@ -2,7 +2,7 @@
 configuration:
   device:
     name: Device
-    description: The serial port where the CC2652 radio is connected to.
+    description: The serial port where the CC2652 radio is connected. Select any value here even if doing a Network flash (Needed to validate the config form)
   network_device:
     name: Network Device
     description: The ip address and port of your network connected CC2652 radio. IP_ADDRESS:PORT
@@ -20,3 +20,15 @@ configuration:
   device_type:
     name: Flash USB Device
     description: Flash USB device instead of Network Device (Requires you to trigger bootloader mode by holding BSL button while plugging in to USB)
+  sonoff:
+    name: Sonoff Dongle-P
+    description: Select to enable the bsl trigger for the Sonoff Dongle-P
+  cc2652p2_fw: 
+    name: CC1352P2_CC2652P_launchpad_coordinator_20240710
+    description: Current Z-Stack Release for CC2652P2 Devices - Use with all TubesZB CC2652 P2 Coordinator Devices
+  cc2652p7_fw:
+    name: CC1352P7_coordinator_20240710
+    dedescription: Current Z-Stack Release for CC2652P7 Devices - Use with TubesZB CC2652 P7 PoE
+  custom_fw_url:
+    name: Custom_Firmware_URL
+    description: Select if entering a custom url for zipped firmware
