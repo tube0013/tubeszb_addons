@@ -1,5 +1,5 @@
 ---
-version: 0.3.0
+version: 0.2.2
 slug: tzb-silabs-flasher
 name: TubesZB Silicon Labs FW Flasher
 description: TubesZB Silicon Labs firmware flasher add-on
@@ -30,10 +30,6 @@ schema:
   network_device: str?
   device: device(subsystem=tty)?
   device_type: bool?
-  sonoff: bool?
-  cc2652p2_fw: bool?
-  cc2652p7_fw: bool?
-  custom_fw_url: bool?
   firmware_url: str?
   bootloader_baudrate: list(57600|115200|230400|460800|921600)
   flow_control: bool?
