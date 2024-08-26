@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.3.4
+- final tweaks
+
 ## 0.3.3.3
 - Script fixes
 

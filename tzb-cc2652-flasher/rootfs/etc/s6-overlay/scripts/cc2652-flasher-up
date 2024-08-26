@@ -43,7 +43,7 @@ if bashio::config.true 'device_type'; then
     bashio::log.info "Using USB Device " $(bashio::config 'device') 
 else
     device="socket://${network_device}"
-    bashio::log.info "Using Network Device " ${cc2652p2_release_url}
+    bashio::log.info "Using Network Device " ${network_device}
 fi
 
 # Get Firmware
