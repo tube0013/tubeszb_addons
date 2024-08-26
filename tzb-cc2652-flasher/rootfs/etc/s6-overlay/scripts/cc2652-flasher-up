@@ -40,14 +40,17 @@ network_device_url=$(echo "$network_device" | sed 's/.\{5\}$//')
 
 if bashio::config.true 'device_type'; then
     device=$(bashio::config 'device')
+    bashio::log.info "Using USB Device " $(bashio::config 'device') 
 else
     device="socket://${network_device}"
+    bashio::log.info "Using Network Device " ${cc2652p2_release_url}
 fi
 
 # Get Firmware
 
 if bashio::config.true 'cc2652p2_fw'; then
     curl --silent -L -o "/root/firmware.zip" ${cc2652p2_release_url}
+    bashio::log.info "Downloading " ${cc2652p2_release_url}
     if [ ! -f "/root/firmware.zip" ]; then
         bashio::log.warning "Downloading firmware failed"
         exit 0
@@ -61,8 +64,9 @@ if bashio::config.true 'cc2652p2_fw'; then
 
     firmware="firmware.hex"
 
-if bashio::config.true 'cc2652p7_fw'; then
+elif bashio::config.true 'cc2652p7_fw'; then
     curl --silent -L -o "/root/firmware.zip" ${cc2652p7_release_url}
+    bashio::log.info "Downloading " ${cc2652p7_release_url}
     if [ ! -f "/root/firmware.zip" ]; then
         bashio::log.warning "Downloading firmware failed"
         exit 0
@@ -76,8 +80,9 @@ if bashio::config.true 'cc2652p7_fw'; then
 
     firmware="firmware.hex"
 
-if bashio::config.has_value 'firmware_url'; then
+elif bashio::config.has_value 'firmware_url'; then
     curl --silent -L -o "/root/firmware.zip" "$(bashio::config 'firmware_url')"
+    bashio::log.info "Downloading " $(bashio::config 'firmware_url')
     if [ ! -f "/root/firmware.zip" ]; then
         bashio::log.warning "Firmware Download failed"
         exit 0
@@ -92,7 +97,6 @@ if bashio::config.has_value 'firmware_url'; then
     firmware="firmware.hex"
 else
     exit_no_firmware
-    bashio::log.warning "No Firmware Found"
 fi
 
 if bashio::config.true 'trigger_esphome_bsl'; then
@@ -102,11 +106,10 @@ if bashio::config.true 'trigger_esphome_bsl'; then
     sleep 8s
 fi
 
-
 if bashio::config.true 'sonoff'; then
     bashio::log.info "Starting CC2652P flasher with Sonoff ${device}"
     cc1352-flasher.py -p ${device} -evw --bootloader-sonoff-usb "/root/${firmware}"
 else
-   bashio::log.info "Starting cc2652 flasher with ${device}"
+   bashio::log.info "Starting cc2652P flasher with ${device}"
    cc1352-flasher.py -p ${device} -evw "/root/${firmware}"
 fi
