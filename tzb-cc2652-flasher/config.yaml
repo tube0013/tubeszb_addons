@@ -1,5 +1,5 @@
 ---
-version: 0.3.3
+version: 0.3.3.1
 slug: tzb-cc2652-flasher
 name: TubesZB TI CC2652 FW Flasher
 description: TubesZB TI CC2652 firmware flasher add-on
@@ -23,8 +23,6 @@ options:
   sonoff: false
   cc2652p2_fw: false
   cc2652p7_fw: false
-  custom_fw_url: false
-  firmware_url: null
 schema:
   device: device(subsystem=tty)?
   network_device: str?

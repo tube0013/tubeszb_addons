@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.3.1
+- move custom url to advanced drop down
+
 ## 0.3.3
 - Clean up Options
 
