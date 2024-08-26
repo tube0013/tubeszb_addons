@@ -59,6 +59,8 @@ if bashio::config.true 'cc2652p2_fw'; then
         exit 0
     fi
 
+    firmware="firmware.hex"
+
 if bashio::config.true 'cc2652p7_fw'; then
     curl --silent -L -o "/root/firmware.zip" ${cc2652p7_release_url}
     if [ ! -f "/root/firmware.zip" ]; then
@@ -72,7 +74,9 @@ if bashio::config.true 'cc2652p7_fw'; then
         exit 0
     fi
 
-if bashio::config.true 'custom_fw_url:'; then
+    firmware="firmware.hex"
+
+if bashio::config.has_value 'firmware_url'; then
     curl --silent -L -o "/root/firmware.zip" "$(bashio::config 'firmware_url')"
     if [ ! -f "/root/firmware.zip" ]; then
         bashio::log.warning "Firmware Download failed"

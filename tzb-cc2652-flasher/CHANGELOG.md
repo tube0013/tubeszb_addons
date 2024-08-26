@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.3.2
+- Script fixes
+
 ## 0.3.3.1
 - move custom url to advanced drop down
 

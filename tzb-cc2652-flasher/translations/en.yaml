@@ -10,7 +10,7 @@ configuration:
     name: Hardware flow control
     description: Enable hardware flow control for serial port.
   firmware_url:
-    name: Firmware URL
+    name: Custom Firmware URL
     description: >-
       URL for firmware zip image you wish to flash
   trigger_esphome_bsl:
@@ -29,6 +29,3 @@ configuration:
   cc2652p7_fw:
     name: Select for Current Recommended CC2652 P7 Firmware
     description: Current Z-Stack Release for CC2652 P7 Devices - Use with TubesZB CC2652 P7 PoE
-  custom_fw_url:
-    name: Select to Custom_Firmware_URL
-    description: Select if entering a custom url for zipped firmware
