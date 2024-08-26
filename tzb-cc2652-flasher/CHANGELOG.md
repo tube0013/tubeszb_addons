@@ -1,4 +1,6 @@
 # Changelog
+## 0.3.3
+- Clean up Options
 
 ## 0.3.2
 - Add built in z-stack release selections For 20240710 Release
