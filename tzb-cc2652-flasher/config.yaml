@@ -20,6 +20,10 @@ options:
   device: null
   trigger_esphome_bsl: false
   device_type: false
+  sonoff: false
+  cc2652p2_fw: false
+  cc2652p7_fw: false
+  custom_fw_url: false
   flow_control: false
 schema:
   device: device(subsystem=tty)?
