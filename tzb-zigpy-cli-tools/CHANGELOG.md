@@ -1,10 +1,5 @@
 # Changelog
 
-## 0.3.0
-- Add built in z-stack release selections For 20240710 Release
-- Add sonoff option to trigger sonoff bootloader during flash
-- Update ESPHome Bootloader call to work with more devices.
-
 ## 0.2.3
 - Update Builds
 
