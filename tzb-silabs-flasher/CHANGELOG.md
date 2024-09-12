@@ -1,4 +1,6 @@
 # Changelog
+## 0.3.4.0
+- dependency updates
 
 ## 0.2.1
 

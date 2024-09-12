@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.4.0
+- dependency updates
+
 ## 0.3.3.4
 - final tweaks
 

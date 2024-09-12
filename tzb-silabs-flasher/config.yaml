@@ -1,5 +1,6 @@
 ---
-version: 0.2.2
+version: 0.3.4.0
+- dependency updates
 slug: tzb-silabs-flasher
 name: TubesZB Silicon Labs FW Flasher
 description: TubesZB Silicon Labs firmware flasher add-on
