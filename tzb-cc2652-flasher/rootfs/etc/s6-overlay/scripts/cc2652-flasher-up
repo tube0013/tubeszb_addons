@@ -64,7 +64,7 @@ if bashio::config.true 'cc2652p2_fw'; then
 
     firmware="firmware.hex"
 
-if bashio::config.true 'sonoff'; then
+elif bashio::config.true 'sonoff'; then
     curl --silent -L -o "/root/firmware.zip" ${cc2652p2_release_url}
     bashio::log.info "Downloading " ${cc2652p2_release_url}
     if [ ! -f "/root/firmware.zip" ]; then

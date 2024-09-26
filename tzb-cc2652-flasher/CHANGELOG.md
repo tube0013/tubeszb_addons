@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.5.2
+- Another Minor fix
+
 ## 0.3.5.1
 - Minor fix
 
