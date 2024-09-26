@@ -21,7 +21,7 @@ configuration:
     name: Flash USB Device
     description: Flash USB device instead of Network Device (Requires you to trigger bootloader mode by holding BSL button while plugging in to USB)
   sonoff:
-    name: Flashing a Sonoff Dongle-P7?
+    name: Flashing a Sonoff Dongle-P?
     description: Select to enable the bsl trigger for the Sonoff Dongle-P
   cc2652p2_fw: 
     name: Select for Current Recommended CC2652 P2 Firmware
