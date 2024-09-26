@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.5.1
+- Minor fix
+
 ## 0.3.5.0
 - Fix sonoff firmware dl and typo
 
