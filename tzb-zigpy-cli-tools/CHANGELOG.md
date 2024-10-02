@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.1.0
+- Add verbose logging option
+
 ## 0.3.0.0
 - Update Builds
 

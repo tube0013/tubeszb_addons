@@ -23,3 +23,6 @@ configuration:
   backup_file:
     name: Backup Filename
     description: Backup File name for backup option or retstore option
+  verbose_logging:
+    name: Enable Verbose Logging
+    description: Enables verbose logging for zigpy-cli

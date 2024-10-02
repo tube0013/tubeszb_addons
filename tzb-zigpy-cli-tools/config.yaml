@@ -1,5 +1,5 @@
 ---
-version: 0.3.0.0
+version: 0.3.1.0
 slug: tzb-zigpy-cli-tools
 name: TubesZB Zigpy-CLI Tools
 description: TubesZB Zigpy-CLI Toolsadd-on
@@ -27,6 +27,7 @@ options:
   action: null
   radio_type: null
   baudrate: "115200"
+  verbose_logging: null
 schema:
   device: device(subsystem=tty)?
   device_type: bool?
@@ -35,6 +36,7 @@ schema:
   baudrate: list(57600|115200|230400|460800|921600)
   action: list(info|energy-scan|reset|form|backup|restore)
   backup_filename: str?
+  verbose_logging: bool?
 stage: stable
 startup: once
 boot: manual

@@ -13,6 +13,7 @@ declare baudrate
 declare radio_type
 declare backup_filename
 declare exit_status
+declare zigpy_param
 
 function cleanup() {
     exit_status=$?
@@ -22,6 +23,14 @@ function cleanup() {
     /run/s6/basedir/bin/halt
 }
 trap cleanup EXIT
+
+if bashio::config.true 'verbose_logging'; then
+    zigpy_param="-vvv"
+      bashio::log.info
+else
+    zigpy_param=""
+     bashio::log.info "No verbose logging enabled"
+fi
 
 network_device=$(bashio::config 'network_device')
 
@@ -53,13 +62,13 @@ fi
 
 if ((bashio::config.equals 'action' 'backup') || (bashio::config.equals 'action' 'restore')) && (bashio::config.has_value 'backup_filename'); then
     bashio::log.info "Running zigpy - ${action} on ${device} to /config/tzb-zigpy-cli-tools/${backup_filename}"
-    zigpy radio --baudrate ${baudrate} ${radio_type} ${device} ${action} /config/tzb-zigpy-cli-tools/${backup_filename}
+    zigpy ${zigpy_param} radio --baudrate ${baudrate} ${radio_type} ${device} ${action} /config/tzb-zigpy-cli-tools/${backup_filename}
 elif ((bashio::config.equals 'action' 'backup') || (bashio::config.equals 'action' 'restore')) && (bashio::config.is_empty 'backup_filename'); then
     bashio::log.warning "Not Backup File Specified"
     exit 0
 elif ((bashio::config.equals 'action' 'info') || (bashio::config.equals 'action' 'energy-scan') || (bashio::config.equals 'action' 'form') || (bashio::config.equals 'action' 'reset')); then
     bashio::log.info "Running zigpy - ${action} on ${device}"
-    zigpy radio --baudrate ${baudrate} ${radio_type} ${device} ${action} 
+    zigpy ${zigpy_param} radio --baudrate ${baudrate} ${radio_type} ${device} ${action} 
 else
     bashio::log.warning "No Action Specified"
     exit 0
