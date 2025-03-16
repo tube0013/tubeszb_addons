@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.1.0
+- add ieee write option
+
 ## 0.4.0.3
 - update esphome curl commands
 
