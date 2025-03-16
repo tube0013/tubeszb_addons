@@ -26,3 +26,9 @@ configuration:
   verbose_logging:
     name: Enable Verbose Logging
     description: Enables verbose logging for zigpy-cli
+  write_ieee:
+    name: Write a different IEEE address to a device
+    descrption: Enable and fill in desired IEEE address
+  ieee:
+    Name: IEEE
+    description: Enter desired IEEE address

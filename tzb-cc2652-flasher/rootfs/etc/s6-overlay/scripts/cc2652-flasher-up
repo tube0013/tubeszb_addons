@@ -14,6 +14,12 @@ declare firmware
 declare exit_status
 declare cc2652p2_release_url
 declare cc2652p7_release_url
+declare ieee
+declare write_ieee
+declare bootloader_option
+declare sonoff_prefix
+declare ieee_option
+declare ieee_log_suffix
 
 # Current Z-Stack FW Release URL
 # Repo Local due to https://github.com/Koenkk/Z-Stack-firmware/issues/512
@@ -32,11 +38,12 @@ trap cleanup EXIT
 
 function exit_no_firmware {
     bashio::log.warning "No firmware found for the selected device, assuming firmware is installed."
-    exit 0
+    exit 0 
 }
 
 network_device=$(bashio::config 'network_device')
 network_device_url=$(echo "$network_device" | sed 's/.\{5\}$//')
+ieee=$(bashio::config 'ieee')
 
 if bashio::config.true 'device_type'; then
     device=$(bashio::config 'device')
@@ -123,10 +130,58 @@ if bashio::config.true 'trigger_esphome_bsl'; then
     sleep 8s
 fi
 
+#Determine if flashing a sonoff device and if true set the option
 if bashio::config.true 'sonoff'; then
-    bashio::log.info "Starting CC2652P flasher with Sonoff ${device}"
-    cc1352-flasher.py -p ${device} -evw --bootloader-sonoff-usb "/root/${firmware}"
+    bootloader_option="--bootloader-sonoff-usb"
+    sonoff_prefix="Sonoff "
 else
-   bashio::log.info "Starting cc2652P flasher with ${device}"
-   cc1352-flasher.py -p ${device} -evw "/root/${firmware}"
+    bootloader_option=""
+    sonoff_prefix=""
 fi
+
+#Determine if writing the ieee is enabled and if so store the option
+if bashio::config.true 'write_ieee'; then
+    ieee_option="--ieee-address ${ieee}"
+    ieee_log_suffix=" and ieee-address ${ieee}"
+else
+    ieee_option=""
+    ieee_log_suffix=""
+fi
+
+bashio::log.info "Starting CC2652P flasher with ${sonoff_prefix}${device}${ieee_log_suffix}"
+cc1352-flasher.py -p "${device}" -evw ${bootloader_option} ${ieee_option} "/root/${firmware}"
+
+
+
+
+
+
+
+
+
+
+
+#Old way
+
+
+#if bashio::config.true 'sonoff'; then
+#   
+#    if bashio::config.true 'write_ieee'; then
+#       bashio::log.info "Starting CC2652P flasher with Sonoff ${device} and ieee-address ${ieee}"
+#       cc1352-flasher.py  -p ${device} -evw --bootloader-sonoff-usb --ieee-address ${ieee} "/root/${firmware}"
+#    else
+#       bashio::log.info "Starting CC2652P flasher with Sonoff ${device}"
+#       cc1352-flasher.py -p ${device} -evw --bootloader-sonoff-usb "/root/${firmware}"
+#    fi
+#
+#else
+#   
+#   if bashio::config.true 'write_ieee'; then
+#      bashio::log.info "Starting cc2652P flasher with ${device} and ieee-address ${ieee}" 
+#      cc1352-flasher.py  -p ${device} -evw  --ieee-address ${ieee} "/root/${firmware}"
+#    else
+#       bashio::log.info "Starting CC2652P flasher with ${device}"
+#       cc1352-flasher.py -p ${device} -evw "/root/${firmware}"
+#    fi
+#fi
+

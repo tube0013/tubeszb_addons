@@ -37,6 +37,8 @@ schema:
   action: list(info|energy-scan|reset|form|backup|restore)
   backup_filename: str?
   verbose_logging: bool?
+  write_ieee: bool?
+  ieee: str?
 stage: stable
 startup: once
 boot: manual
