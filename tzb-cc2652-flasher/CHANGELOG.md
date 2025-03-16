@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.0.2
+- update to use new fork of flasher
+
 ## 0.4.0.1
 - Move USB Serial to Advanced Config
 
