@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.0.0
+- Move USB Serial to Advanced Config
+
 ## 0.3.5.2
 - Another Minor fix
 
