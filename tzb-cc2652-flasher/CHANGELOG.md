@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.0.3
+- update esphome curl commands
+
 ## 0.4.0.2
 - update to use new fork of flasher
 

@@ -118,8 +118,8 @@ fi
 
 if bashio::config.true 'trigger_esphome_bsl'; then
     bashio::log.info "Triggering Bootloader mode on ${network_device_url}"
-    curl --silent -X POST http://${network_device_url}/button/trigger_zigbee_module_bootloader/press
-    curl --silent -X POST http://${network_device_url}/button/prep_the_cc2652p2_for_firmware_update/press
+    curl --silent http://${network_device_url}/button/trigger_zigbee_module_bootloader/press
+    curl --silent http://${network_device_url}/button/prep_the_cc2652p2_for_firmware_update/press
     sleep 8s
 fi
 
