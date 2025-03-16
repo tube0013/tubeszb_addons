@@ -29,3 +29,9 @@ configuration:
   cc2652p7_fw:
     name: Select for Current Recommended CC2652 P7 Firmware
     description: Current Z-Stack Release for CC2652 P7 Devices - Use with TubesZB CC2652 P7 PoE
+  write_ieee:
+    name: Write a different IEEE address to a device
+    descrption: Enable and fill in desired IEEE address
+  ieee:
+    Name: IEEE
+    description: Enter desired IEEE address in 00:12:4b:aa:bb:cc:dd:ee format
