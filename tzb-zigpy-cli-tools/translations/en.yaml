@@ -31,4 +31,4 @@ configuration:
     descrption: Enable and fill in desired IEEE address
   ieee:
     Name: IEEE
-    description: Enter desired IEEE address
+    description: Enter desired IEEE address in 00:12:4b:aa:bb:cc:dd:ee format
