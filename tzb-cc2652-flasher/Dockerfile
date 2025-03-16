@@ -10,7 +10,7 @@ RUN \
         py3-pip \
         python3 \
         git \
-    pip3 uninstall -y setuptools \
+    #pip3 uninstall -y setuptools \
     && pip3 install gpiod intelhex pyserial python_magic scripttest setuptools \
     && python3 -m pip install --use-pep517 git+https://github.com/mercenaruss/cc1352-flasher.git
 
