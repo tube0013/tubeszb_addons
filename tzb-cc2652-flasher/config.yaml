@@ -17,9 +17,7 @@ image: "ghcr.io/tube0013/{arch}-addon-tzb-cc2652-flasher"
 init: false
 options:
   network_device: null
-  device: null
   trigger_esphome_bsl: false
-  device_type: false
   sonoff: false
   cc2652p2_fw: false
   cc2652p7_fw: false
