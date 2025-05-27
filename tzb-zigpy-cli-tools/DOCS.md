@@ -35,7 +35,7 @@ Pick your radio type from the drop down.
 Pick the Baudrate for your radio, if you don't know it leave it at 115200
 
 # Pick the Zigpy-CLI command to use
-Currently 4 commands are supported from zipy-cli
+Currently 6 commands are supported from zipy-cli
 * **Info** - Read the network information from the radio
 * **Energy Scan** -  Perform an energy scan
 * **Form** - Form a network on a new coordinator
@@ -61,7 +61,7 @@ Add-on configuration:
 | device             | Serial service where the radio is attached |
 | network_device     | Network Serial port (IP_ADDRESS:PORT)
 | radio_type         | Type of radio / coordinator
-| baudrate           | Serial port baudrate (depends on firmware)   |
+| baudrate           | Serial port baudrate (depends on firmware and model)   |
 | action             | zigpy-cli command to run |
 | backup_filename    | Network backup filename |
 
