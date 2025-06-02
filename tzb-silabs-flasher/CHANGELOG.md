@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.4.3
+- clean up copy paste mistake causing supervisor warnings.
+
 ## 0.3.4.2
 - dependency updates
 
