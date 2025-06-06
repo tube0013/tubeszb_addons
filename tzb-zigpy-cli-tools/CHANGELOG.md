@@ -1,5 +1,7 @@
 # Changelog
 
+## 0.3.2.0
+- Add baudrate for RaspBee 2 (RaspBee II)
 ## 0.3.1.0
 - Add verbose logging option
 
