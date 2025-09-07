@@ -6,9 +6,6 @@ configuration:
   network_device:
     name: Network Device
     description: The ip address and port of your network connected CC2652 radio. IP_ADDRESS:PORT
-  flow_control:
-    name: Hardware flow control
-    description: Enable hardware flow control for serial port.
   firmware_url:
     name: Custom Firmware URL
     description: >-
@@ -31,7 +28,7 @@ configuration:
     description: Current Z-Stack Release for CC2652 P7 Devices - Use with TubesZB CC2652 P7 PoE
   write_ieee:
     name: Write a different IEEE address to a device
-    descrption: Enable and fill in desired IEEE address
+    description: Enable and fill in desired IEEE address
   ieee:
-    Name: IEEE
+    name: IEEE
     description: Enter desired IEEE address in 00:12:4b:aa:bb:cc:dd:ee format
