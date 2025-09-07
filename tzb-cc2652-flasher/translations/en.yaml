@@ -2,7 +2,7 @@
 configuration:
   device:
     name: Device
-    description: The serial port where the CC2652 radio is connected. Select any value here even if doing a Network flash (Needed to validate the config form)
+    description: The serial port where the CC2652 radio is connected. IMPORTANT! Select any value here even if doing a Network flash (Needed to validate the config form)
   network_device:
     name: Network Device
     description: The ip address and port of your network connected CC2652 radio. IP_ADDRESS:PORT
@@ -12,11 +12,11 @@ configuration:
   firmware_url:
     name: Custom Firmware URL
     description: >-
-      URL for firmware zip image you wish to flash
+      URL for firmware zip image you wish to flash, if a GitHub URL be sure to use raw or release link. 
   trigger_esphome_bsl:
     name: Enable Bootloader mode with ESPHome
     description: >-
-      Enables the addon to trigger bootloader mode by talking directly to ESPHome
+      Enables the addon to trigger bootloader mode by talking directly to ESPHome for TubesZB devices
   device_type:
     name: Flash USB Device
     description: Flash USB device instead of Network Device (Requires you to trigger bootloader mode by holding BSL button while plugging in to USB)
@@ -24,10 +24,10 @@ configuration:
     name: Flashing a Sonoff Dongle-P?
     description: Select to enable the bsl trigger for the Sonoff Dongle-P
   cc2652p2_fw: 
-    name: Select for Current Recommended CC2652 P2 Firmware
+    name: Select for Current CC2652 P2 Firmware Release
     description: Current Z-Stack Release for CC2652 P2 Devices - Use with all TubesZB CC2652 P2 Coordinator Devices
   cc2652p7_fw:
-    name: Select for Current Recommended CC2652 P7 Firmware
+    name: Select for Current CC2652 P7 Firmware Release
     description: Current Z-Stack Release for CC2652 P7 Devices - Use with TubesZB CC2652 P7 PoE
   write_ieee:
     name: Write a different IEEE address to a device

@@ -24,8 +24,8 @@ declare ieee_log_suffix
 # Current Z-Stack FW Release URL
 # Repo Local due to https://github.com/Koenkk/Z-Stack-firmware/issues/512
 
-cc2652p2_release_url="https://github.com/tube0013/tubeszb_addons/raw/main/tzb-cc2652-flasher/firmware/CC1352P2_CC2652P_launchpad_coordinator_20240710.zip"
-cc2652p7_release_url="https://github.com/tube0013/tubeszb_addons/raw/main/tzb-cc2652-flasher/firmware/CC1352P7_coordinator_20240710.zip"
+cc2652p2_release_url="https://github.com/tube0013/tubeszb_addons/raw/main/tzb-cc2652-flasher/firmware/CC1352P2_CC2652P_launchpad_coordinator_20250321.zip"
+cc2652p7_release_url="https://github.com/tube0013/tubeszb_addons/raw/main/tzb-cc2652-flasher/firmware/CC1352P7_coordinator_20250321.zip"
 
 function cleanup() {
     exit_status=$?
