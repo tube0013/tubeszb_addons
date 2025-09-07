@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.5.0.0
+## 0.5.0.1
 - add device_type switch back to enable USB devices again
 - update Z-Stack Links to latest FW Release
 

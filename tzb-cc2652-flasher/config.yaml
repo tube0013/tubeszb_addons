@@ -1,5 +1,5 @@
 ---
-version: 0.5.0.0
+version: 0.5.0.1
 slug: tzb-cc2652-flasher
 name: TubesZB TI CC2652 FW Flasher
 description: TubesZB TI CC2652 firmware flasher add-on
@@ -16,6 +16,7 @@ hassio_api: true
 image: "ghcr.io/tube0013/{arch}-addon-tzb-cc2652-flasher"
 init: false
 options:
+  device: null
   network_device: null
   trigger_esphome_bsl: false
   device_type: false
