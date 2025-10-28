@@ -62,6 +62,7 @@ fi
 bashio::log.info "Starting universal-silabs-flasher with ${device} (bootloader baudrate ${bootloader_baudrate})"
 universal-silabs-flasher ${verbose} --device ${device} \
      --bootloader-baudrate "${bootloader_baudrate}" \
+     --probe-method "$(bashio::config 'probe_method')" \
      flash --force --firmware "/root/${firmware}"
 
 

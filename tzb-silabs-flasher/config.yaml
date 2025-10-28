@@ -1,5 +1,5 @@
 ---
-version: 0.4.0.0
+version: 0.4.1.0
 slug: tzb-silabs-flasher
 name: TubesZB Silicon Labs FW Flasher
 description: TubesZB Silicon Labs firmware flasher add-on
@@ -21,6 +21,7 @@ options:
   device_type: false
   firmware_url: str?
   bootloader_baudrate: "115200"
+  probe_method: "bootloader"
   flow_control: false
   verbose: false
 schema:
@@ -29,6 +30,7 @@ schema:
   device_type: bool?
   firmware_url: str?
   bootloader_baudrate: list(57600|115200|230400|460800|921600)
+  probe_method: list(bootloader|cpc|ezsp|spinel|router)
   flow_control: bool?
   verbose: bool?
 stage: experimental

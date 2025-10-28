@@ -25,3 +25,7 @@ configuration:
   device_type:
     name: Flash USB Device
     description: Flash USB device instead of Network Device
+  probe_method:
+    name: Probe Method
+    description: >-
+      Method used to probe for bootloader on the Silicon Labs device.
