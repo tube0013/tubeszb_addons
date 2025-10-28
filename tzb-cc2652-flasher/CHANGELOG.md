@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.1.0
+- Fix Broken GitHub link
+
 ## 0.5.0.2
 - add device_type switch back to enable USB devices again
 - update Z-Stack Links to latest FW Release

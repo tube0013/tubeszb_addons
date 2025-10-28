@@ -1,4 +1,9 @@
 # Changelog
+
+## 0.4.0.0
+- Fix Broken GitHub link 
+- Bump backend libraries
+
 ## 0.3.4.3
 - clean up copy paste mistake causing supervisor warnings.
 

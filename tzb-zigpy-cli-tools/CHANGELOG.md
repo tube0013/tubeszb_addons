@@ -1,4 +1,6 @@
 # Changelog
+## 0.4.0.0
+- Bump backend libraries
 
 ## 0.3.1.0
 - Add verbose logging option
