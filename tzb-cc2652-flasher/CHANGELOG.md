@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.1.1
+- Bump backend libraries
+
 ## 0.5.1.0
 - Fix Broken GitHub link
 

@@ -1,4 +1,7 @@
 # Changelog
+## 0.5.0.0
+- Bump backend libraries
+
 ## 0.4.1.0
 - add probe-method option
 
