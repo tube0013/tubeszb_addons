@@ -1,5 +1,5 @@
 # Changelog
-## 0.5.0.0
+## 0.5.1.2
 - Bump backend libraries
 
 ## 0.4.1.0
