@@ -15,7 +15,7 @@ on:
 
 jobs:
   init:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     name: Initialize builds
     outputs:
       changed_addons: ${{ steps.changed_addons.outputs.addons }}
@@ -64,7 +64,7 @@ jobs:
           fi
   build:
     needs: init
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: needs.init.outputs.changed == 'true'
     name: Build ${{ matrix.arch }} ${{ matrix.addon }} add-on
     strategy:
@@ -106,7 +106,7 @@ jobs:
 
       - name: Build ${{ matrix.addon }} add-on
         if: steps.check.outputs.build_arch == 'true'
-        uses: home-assistant/builder@master
+        uses: home-assistant/builder@2025.09.0
         with:
           args: |
             ${{ env.BUILD_ARGS }} \
