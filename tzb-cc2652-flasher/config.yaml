@@ -6,9 +6,10 @@ description: TubesZB TI CC2652 firmware flasher add-on
 url: >
   https://github.com/tube0013/tubeszb_addons/tree/main/tzb-cc2652-flasher/
 arch:
+  - armhf
+  - armv7
   - aarch64
   - amd64
-  - armhf
   - i386
 gpio: false
 hassio_api: true

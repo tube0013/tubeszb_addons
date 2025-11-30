@@ -6,9 +6,10 @@ description: TubesZB Silicon Labs firmware flasher add-on
 url: >
   https://github.com/tube0013/tubeszb_addons/tree/master/tzb-silabs-flasher
 arch:
+  - armhf
+  - armv7
   - aarch64
   - amd64
-  - armhf
   - i386
 gpio: false
 hassio_api: true
