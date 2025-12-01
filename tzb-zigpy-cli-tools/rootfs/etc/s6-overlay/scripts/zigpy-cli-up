@@ -36,7 +36,7 @@ network_device=$(bashio::config 'network_device')
 
 # Make folder for backups
 if  [ -d /config/tzb-zigpy-cli-tools ]; then
-    bashio::log.info "Directoty Exists"
+    bashio::log.info "Directory Exists"
 else
     mkdir /config/tzb-zigpy-cli-tools
     bashio::log.info "Created /config/tzb-zigpy-cli-tools Directory"
